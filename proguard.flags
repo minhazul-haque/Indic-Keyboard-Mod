@@ -1,0 +1,18 @@
+# Keep classes and methods that have the @UsedForTesting annotation
+-keep @org.smc.inputmethod.annotations.UsedForTesting class *
+-keepclassmembers class * {
+    @org.smc.inputmethod.annotations.UsedForTesting *;
+}
+
+# Keep classes and methods that have the @ExternallyReferenced annotation
+-keep @org.smc.inputmethod.annotations.ExternallyReferenced class *
+-keepclassmembers class * {
+    @org.smc.inputmethod.annotations.ExternallyReferenced *;
+}
+
+# Keep native methods
+-keepclassmembers class * {
+    native <methods>;
+}
+
+-keep class android.support.v4.** { *; }
